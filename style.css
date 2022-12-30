@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: cursive;
+}
+
+.main {
+  background-color: rgb(67, 67, 67);
+  width: 30%;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 0;
+  box-shadow: 0 4px 10px;
+}
+
+.inp-container {
+  flex-wrap: wrap;
+  /* background-color: red; */
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.inp-container input {
+  font-size: 20px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 5px 2px;
+  width: 100%;
+}
+
+.inp-container input:focus {
+  outline: none;
+}
+
+.inp-container i {
+  color: rgb(255, 250, 191);
+  position: absolute;
+  right: 0px;
+  top: 7px;
+  right: 2px;
+  padding: 4px;
+  border-radius: 2px;
+  font-size: 20px;
+  background-color: rgb(0, 136, 205);
+}
+
+i {
+  cursor: pointer;
+}
+
+ul {
+  width: 83%;
+  padding: 0 5px;
+}
+
+ul li {
+  list-style: none;
+  margin: 10px 0;
+  padding: 5px 10px;
+  background-color: rgb(255, 247, 159);
+  color: rgb(54, 54, 54);
+  display: flex;
+  justify-content: space-between;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: 0.2s;
+}
+
+.fa-trash {
+  color: rgb(208, 0, 0);
+}
+
+h1 {
+  color: rgb(255, 251, 141);
+}
+
+ul li:hover {
+  background-color: rgb(255, 237, 221);
+}
+
+ul li i:hover {
+  color: rgb(255, 85, 0);
+  transition: 0.1s;
+}
