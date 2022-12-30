@@ -15,9 +15,9 @@ body {
 }
 
 .main {
-  background-color: rgb(67, 67, 67);
+  background-color: rgb(96, 96, 96);
   width: 30%;
-  height: 60vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
