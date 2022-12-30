@@ -28,7 +28,6 @@ body {
 
 .inp-container {
   flex-wrap: wrap;
-  /* background-color: red; */
   width: 80%;
   display: flex;
   align-items: center;
@@ -101,4 +100,9 @@ ul li:hover {
 ul li i:hover {
   color: rgb(255, 85, 0);
   transition: 0.1s;
+}
+
+input::placeholder {
+  font-size: 18px;
+  font-family: cursive;
 }
