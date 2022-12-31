@@ -1,6 +1,7 @@
 const inp = document.getElementById("inp");
 const list = document.getElementById("list");
 const add = document.getElementById("add");
+let data = [];
 
 function addingLi() {
   if (inp.value != "") {
@@ -9,8 +10,13 @@ function addingLi() {
     let icon = document.createElement("div");
     icon.innerHTML = `<i class="del fa-solid fa-trash"></i>`;
     li.append(icon);
+    data.push(li);
+    toLocal(data);
+
     list.appendChild(li);
-    localStorageAdd(li);
+
+    console.log(data);
+    // localStorageAdd();
     inp.value = "";
     icon.addEventListener("click", (e) => {
       li.remove();
@@ -28,6 +34,14 @@ inp.addEventListener("keydown", (e) => {
   }
 });
 
-function localStorageAdd(item) {
-  localStorage.setItem("todo", JSON.stringify(item));
+function toLocal(data) {
+  localStorage.setItem("todo", JSON.stringify(data));
 }
+
+function fromLocal(data) {
+  data.forEach((item) => {
+    list.append(item);
+  });
+}
+
+window.addEventListener("load", fromLocal(data));
