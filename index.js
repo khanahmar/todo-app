@@ -1,8 +1,7 @@
 const inp = document.getElementById("inp");
 const list = document.getElementById("list");
 const add = document.getElementById("add");
-let data = [];
-
+const data = [];
 function addingLi() {
   if (inp.value != "") {
     let li = document.createElement("li");
@@ -10,17 +9,14 @@ function addingLi() {
     let icon = document.createElement("div");
     icon.innerHTML = `<i class="del fa-solid fa-trash"></i>`;
     li.append(icon);
-    data.push(li);
-    toLocal(data);
-
-    list.appendChild(li);
-
+    data.push(inp.value);
     console.log(data);
-    // localStorageAdd();
+    list.appendChild(li);
     inp.value = "";
     icon.addEventListener("click", (e) => {
       li.remove();
     });
+    addData();
   }
 }
 
@@ -34,14 +30,15 @@ inp.addEventListener("keydown", (e) => {
   }
 });
 
-function toLocal(data) {
-  localStorage.setItem("todo", JSON.stringify(data));
-}
-
-function fromLocal(data) {
-  data.forEach((item) => {
-    list.append(item);
+function getData() {
+  let getData = JSON.parse(localStorage.getItem("todo"));
+  getData.forEach((item) => {
+    list.innerHTML += `<li>${item}<i class="del fa-solid fa-trash"></i></li>`;
   });
 }
 
-window.addEventListener("load", fromLocal(data));
+function addData() {
+  localStorage.setItem("todo", JSON.stringify(data));
+}
+
+window.addEventListener("load", getData);
